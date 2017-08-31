@@ -9,12 +9,12 @@
                             <dl class="hc_tag">
                                 <dd>
                                     <dl>
-                                        <dt>源码分类</dt>
+                                        <dt>类型</dt>
                                         <dd>
-                                                                                        <a href="javascript:void(0)">天使轮</a>
-                                                                                        <a href="javascript:void(0)">A轮</a>
-                                                                                        <a href="javascript:void(0)">B轮</a>
-                                                                                        <a href="javascript:void(0)">C轮</a>
+                                                                                        <a href="javascript:void(0)">微信</a>
+                                                                                        <a href="javascript:void(0)">购物</a>
+                                                                                        <a href="javascript:void(0)">cms</a>
+                                                                                        <a href="javascript:void(0)"></a>
                                                                                         <a href="javascript:void(0)">D轮及以上</a>
                                                                                         <a href="javascript:void(0)">上市公司</a>
                                                                                         <a href="javascript:void(0)">不需要融资</a>
@@ -25,18 +25,23 @@
                             <ul class="hc_list reset">
                                 <li>
                                     <a href="/index.php/Home/Index/showCompany/id/1.html" target="_blank">
-                                        <h3 title="微信淘宝客3.4.8">
-                                            微信淘宝客3.4.8                                       </h3>
+                                        <h3 title="测试">
+                                            IJH江湖婚庆门户系统V2.2最新版：真正无任何限制，新增和优化修复多个功能                                        </h3>
                                         <div class="comLogo">
-                                                                                        <img src="/zp/Uploads/Company/Logo/1.JPEG" width="190" height="190" alt="微信淘宝客3.4.8" />                                            <ul>
+                                                                                        <img src="/zp/Uploads/Company/Logo/1.JPEG" width="190" height="190" alt="布袋谷" />                                            <ul>
                                                 <li>
-                                                    分类：cms                                                </li>
+                                                    移动互联网                                                </li>
+                                                <li>
+                                                    北京，天使轮                                                </li>
                                             </ul>
                                         </div>
                                     </a>
-                                    <a>
-                                        简介：微赞版淘宝客 优化很多细节问题 微擎微赞通用微赞模板下载                                    </a>                                    <ul class="reset ctags">
-                                        <li>阅读:134</li><li>日期:2017-03-14</li>                                   </ul>
+                                    <a href="/index.php/Home/JobShow/index/jid/4.html" target="_blank">
+                                        PHP                                    </a><a href="/index.php/Home/JobShow/index/jid/5.html" target="_blank">
+                                        招商经理                                    </a><a href="/index.php/Home/JobShow/index/jid/299.html" target="_blank">
+                                        UI                                    </a><a href="/index.php/Home/JobShow/index/jid/602.html" target="_blank">
+                                        测试工程师                                    </a>                                    <ul class="reset ctags">
+                                        <li>2017-07-24 16:36:06</li><li>下载:205</li>                                    </ul>
                                 </li><li>
                                     <a href="/index.php/Home/Index/showCompany/id/3.html" target="_blank">
                                         <h3 title="大家好">
@@ -71,8 +76,7 @@
                                         资深课程顾问--建外SOHO                                    </a><a href="/index.php/Home/JobShow/index/jid/302.html" target="_blank">
                                         实习运营                                    </a>                                    <ul class="reset ctags">
                                         <li>美女多</li><li>专项奖金</li><li>绩效奖金</li><li>五险一金</li>                                    </ul>
-                                </li>
-                                </ul>
+                                </li>            </ul>
                             <div class="Pagination"><?php echo $page; ?></div>
                         </form>
                     </div>

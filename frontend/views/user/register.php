@@ -8,7 +8,7 @@
     	<input type="hidden" id="resubmitToken" value="9b207beb1e014a93bc852b7ba450db27" />		
 		<div class="login_box">
         	<form id="loginForm" action="{:U('User/add_user')}" method="post">
-        		<!-- <ul class="register_radio clearfix">
+        		<ul class="register_radio clearfix">
 		            <li>
 		            	找工作
 		              	<input type="radio" value="0" name="type" /> 
@@ -17,7 +17,7 @@
 		           	    招人
 		              	<input type="radio" value="1" name="type" /> 
 		            </li>
-		        </ul>  -->
+		        </ul> 
             	<input type="text" id="email" name="email" tabindex="1" placeholder="请输入常用邮箱地址"  />
                 <span class="error" style="display:none;"></span>
                 <input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
