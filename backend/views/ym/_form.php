@@ -1,41 +1,43 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
+use common\core\ActiveForm;
+use common\helpers\ArrayHelper;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Ym */
-/* @var $form yii\widgets\ActiveForm */
+/* @var $model backend\models\Ad */
+/* @var $form common\core\ActiveForm */
 ?>
 
-<div class="ym-form">
+<?php $form = ActiveForm::begin([
+    'options'=>[
+        'class'=>"form-aaa ",
+        'enctype'=>"multipart/form-data",
+    ]
+]); ?>
 
-    <?php $form = ActiveForm::begin(); ?>
+<?= $form->field($model, 'title')->textInput(['maxlength' => true])->label('标题'); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+<?=$form->field($model, 'cat_id')->selectList(
+    ArrayHelper::listDataLevel(\backend\models\ArticleCat::find()->asArray()->all(), 'id', 'title','id','pid'),
+    ['class'=>'form-control c-md-2'])->label('分类')->hint('英文标识'); ?>
 
-    <?= $form->field($model, 'cat_id')->textInput() ?>
+    <?= $form->field($model, 'goods_from')->textInput(['maxlength' => true])->label('商品来源') ?>
 
-    <?= $form->field($model, 'discription')->textInput(['maxlength' => true]) ?>
+        <!-- 单图 -->
+    <?=$form->field($model, 'img')->widget('\common\widgets\images\Images',[
+        //'type' => \backend\widgets\images\Images::TYPE_IMAGE, // 单图
+        'saveDB'=>1, //图片是否保存到picture表，默认不保存
+    ],['class'=>'c-md-12'])->label('商品图片');?>
 
-    <?= $form->field($model, 'shows')->textInput() ?>
+    <?= $form->field($model, 'href')->textInput(['maxlength' => true])->label('链接地址'); ?>
 
-    <?= $form->field($model, 'down_url')->textInput(['maxlength' => true]) ?>
+    <?=$form->field($model, 'desc')->textarea(['class'=>'form-control c-md-4', 'rows'=>3])->label('商品描述')->hint('商品描述') ?>
 
-    <?= $form->field($model, 'get_code')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'modified_at')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
+<div class="form-actions">
+    <?= Html::submitButton('<i class="icon-ok"></i> 确定', ['class' => 'btn blue ajax-post','target-form'=>'form-aaa']) ?>
+    <?= Html::button('取消', ['class' => 'btn']) ?>
 </div>
+
+<?php ActiveForm::end(); ?>

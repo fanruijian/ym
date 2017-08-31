@@ -74,6 +74,25 @@ class YmController extends Controller
         }
     }
 
+     /**
+     * Creates a new Ym model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+     public function actionAdd()
+     {
+         $model = new Ym();
+ 
+         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+             $this->success('操作成功', $this->getForward());
+         } else {
+             $model->loadDefaultValues();
+             return $this->render('edit', [
+                 'model' => $model,
+             ]);
+         }
+     }
+
     /**
      * Updates an existing Ym model.
      * If update is successful, the browser will be redirected to the 'view' page.
