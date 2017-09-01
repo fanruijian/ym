@@ -2,46 +2,41 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use common\helpers\ArrayHelper;
+use yii\helpers\Url;
+
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\search\YmSearch */
+/* @var $model backend\models\search\AdSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="ym-search">
-
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
-
-    <?= $form->field($model, 'id') ?>
-
-    <?= $form->field($model, 'title') ?>
-
-    <?= $form->field($model, 'cat_id') ?>
-
-    <?= $form->field($model, 'discription') ?>
-
-    <?= $form->field($model, 'shows') ?>
-
-    <?php // echo $form->field($model, 'down_url') ?>
-
-    <?php // echo $form->field($model, 'get_code') ?>
-
-    <?php // echo $form->field($model, 'content') ?>
-
-    <?php // echo $form->field($model, 'status') ?>
-
-    <?php // echo $form->field($model, 'created_at') ?>
-
-    <?php // echo $form->field($model, 'modified_at') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+<?php $form = ActiveForm::begin([
+    'action' => ['index'],
+    'method' => 'get',
+    'options'=>[
+        //'class'=>"form-inline",
+        'data-pjax' => true, //开启pjax搜索
+    ]
+]); ?>
+<div class="row">
+    <div class="col-md-1">
+    <?=$form->field($model, 'cat_id')->dropDownList(
+    ArrayHelper::listDataLevel(\backend\models\ArticleCat::find()->asArray()->all(), 'id', 'title','id','pid'),
+    ['class'=>'form-control c-md-12'])->label('分类'); ?>
+    </div>
+    <div class="col-md-2">
+    <?= $form->field($model, 'title')->textInput()->label('标题') ?>
+    </div>
+    <div class="col-md-1">
+    <?=$form->field($model, 'status')->dropDownList([''=>'全部',0=>'隐藏',1=>'正常'],['class'=>'form-control'])->label('栏目'); ?>
     </div>
 
-    <?php ActiveForm::end(); ?>
-
+    <div class="col-md-2">
+        <div class="form-group" style="margin-top: 24px;">
+        <?= Html::submitButton('搜索', ['class' => 'btn btn-primary']) ?>
+        <?= Html::resetButton('重置', ['class' => 'btn btn-default']) ?>
+        </div>
+    </div>
 </div>
+<?php ActiveForm::end(); ?>

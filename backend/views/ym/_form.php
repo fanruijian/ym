@@ -21,19 +21,34 @@ use yii\helpers\Url;
 
 <?=$form->field($model, 'cat_id')->selectList(
     ArrayHelper::listDataLevel(\backend\models\ArticleCat::find()->asArray()->all(), 'id', 'title','id','pid'),
-    ['class'=>'form-control c-md-2'])->label('分类')->hint('英文标识'); ?>
+    ['class'=>'form-control c-md-2'])->label('分类'); ?>
 
-    <?= $form->field($model, 'goods_from')->textInput(['maxlength' => true])->label('商品来源') ?>
+<?= $form->field($model, 'discription')->textInput(['maxlength' => true])->label('简单描述') ?>
 
-        <!-- 单图 -->
-    <?=$form->field($model, 'img')->widget('\common\widgets\images\Images',[
-        //'type' => \backend\widgets\images\Images::TYPE_IMAGE, // 单图
-        'saveDB'=>1, //图片是否保存到picture表，默认不保存
-    ],['class'=>'c-md-12'])->label('商品图片');?>
+<?= $form->field($model, 'down_url')->textInput(['maxlength' => true])->label('下载地址'); ?>
 
-    <?= $form->field($model, 'href')->textInput(['maxlength' => true])->label('链接地址'); ?>
-
-    <?=$form->field($model, 'desc')->textarea(['class'=>'form-control c-md-4', 'rows'=>3])->label('商品描述')->hint('商品描述') ?>
+<?= $form->field($model, 'get_code')->textInput(['maxlength' => true])->label('提取码'); ?>
+<?=$form->field($model, 'content')->widget('\kucha\ueditor\UEditor',[
+    'clientOptions' => [
+        'serverUrl' => Url::to(['/public/ueditor']),//确保serverUrl正确指向后端地址
+        'lang' =>'zh-cn', //中文为 zh-cn
+        'initialFrameWidth' => '100%',
+        'initialFrameHeight' => '400',
+        //定制菜单，参考http://fex.baidu.com/ueditor/#start-toolbar
+        'toolbars' => [
+            [
+                'fullscreen', 'source', 'undo', 'redo', '|',
+                'fontsize',
+                'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat',
+                'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|',
+                'forecolor', 'backcolor', '|',
+                'lineheight', '|',
+                'indent', '|',
+            ],
+            ['preview','simpleupload','insertimage','link','emotion','map','insertvideo','insertcode',]
+        ]
+    ]
+],['class'=>'c-md-7'])->label('文章内容');?>
 
 <div class="form-actions">
     <?= Html::submitButton('<i class="icon-ok"></i> 确定', ['class' => 'btn blue ajax-post','target-form'=>'form-aaa']) ?>

@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * YmController implements the CRUD actions for Ym model.
  */
-class YmController extends Controller
+class YmController extends BaseController
 {
     /**
      * @inheritdoc
@@ -99,14 +99,14 @@ class YmController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionEdit($id)
     {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
+            return $this->render('edit', [
                 'model' => $model,
             ]);
         }
