@@ -5,7 +5,7 @@ namespace frontend\controllers;
 use yii\web\Controller;
 use frontend\utils\Page;
 
-class IndexController extends Controller
+class IndexController extends BaseController
 {
     /**
      * @var string
@@ -14,6 +14,8 @@ class IndexController extends Controller
 
     public function actionIndex()
     {
+        $sql  = "select * from yii2_article_cat where pid=14";
+        $category = $this->query($sql);
         //phpinfo();
         $p = new Page(100,15);
          $p->setConfig('first', '首页');
@@ -21,7 +23,7 @@ class IndexController extends Controller
         $p->setConfig('next', '下一页');
         $p->setConfig('last', '尾页');
         $page = $p->show();
-        return $this->render('index',['page'=>$page]);
+        return $this->render('index',['page'=>$page,'category'=>$category]);
     }
 
     public function actionTest(){

@@ -11,14 +11,10 @@
                                     <dl>
                                         <dt>类型</dt>
                                         <dd>
-                                                                                        <a href="javascript:void(0)">微信</a>
-                                                                                        <a href="javascript:void(0)">购物</a>
-                                                                                        <a href="javascript:void(0)">cms</a>
-                                                                                        <a href="javascript:void(0)"></a>
-                                                                                        <a href="javascript:void(0)">D轮及以上</a>
-                                                                                        <a href="javascript:void(0)">上市公司</a>
-                                                                                        <a href="javascript:void(0)">不需要融资</a>
-                                                                                    </dd>
+                                            <?php foreach ($category as $key => $value) { ?>
+                                            <a href="javascript:void(0)"><?php echo $value['title'];?></a>
+                                            <?php } ?>
+                                        </dd>
                                     </dl>
                                 </dd>
                             </dl>
