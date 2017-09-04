@@ -19,26 +19,24 @@
                                 </dd>
                             </dl>
                             <ul class="hc_list reset">
+                                <?php foreach ($yms as $key2 => $value2) { ?>
                                 <li>
                                     <a href="/index.php/Home/Index/showCompany/id/1.html" target="_blank">
                                         <h3 title="测试">
-                                            IJH江湖婚庆门户系统V2.2最新版：真正无任何限制，新增和优化修复多个功能                                        </h3>
+                                            <?php echo $value2['title']?>                                        </h3>
                                         <div class="comLogo">
-                                                                                        <img src="/zp/Uploads/Company/Logo/1.JPEG" width="190" height="190" alt="布袋谷" />                                            <ul>
+                                                                                        <img src="<?php echo $value2['pic_url']?>" width="190" height="190" alt="布袋谷" />                                            <ul>
                                                 <li>
-                                                    移动互联网                                                </li>
-                                                <li>
-                                                    北京，天使轮                                                </li>
+                                                    类型：<?php echo $value2['cat_id']?>                                                </li>
                                             </ul>
                                         </div>
                                     </a>
                                     <a href="/index.php/Home/JobShow/index/jid/4.html" target="_blank">
-                                        PHP                                    </a><a href="/index.php/Home/JobShow/index/jid/5.html" target="_blank">
-                                        招商经理                                    </a><a href="/index.php/Home/JobShow/index/jid/299.html" target="_blank">
-                                        UI                                    </a><a href="/index.php/Home/JobShow/index/jid/602.html" target="_blank">
-                                        测试工程师                                    </a>                                    <ul class="reset ctags">
-                                        <li>2017-07-24 16:36:06</li><li>下载:205</li>                                    </ul>
-                                </li><li>
+                                        简介：<?php echo $value2['discription']?>                                    </a>                                    <ul class="reset ctags">
+                                        <li><?php echo $value2['created_at']; ?></li><li>下载:<?php echo $value2['shows']; ?></li>                                    </ul>
+                                </li>
+                                <?php } ?>
+                                <li>
                                     <a href="/index.php/Home/Index/showCompany/id/3.html" target="_blank">
                                         <h3 title="大家好">
                                             大家好                                        </h3>

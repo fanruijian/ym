@@ -27,6 +27,12 @@ use yii\helpers\Url;
 
 <?= $form->field($model, 'down_url')->textInput(['maxlength' => true])->label('下载地址'); ?>
 
+ <!-- 单图 -->
+ <?=$form->field($model, 'img_url')->widget('\common\widgets\images\Images',[
+        //'type' => \backend\widgets\images\Images::TYPE_IMAGE, // 单图
+        'saveDB'=>1, //图片是否保存到picture表，默认不保存
+    ],['class'=>'c-md-12'])->label('商品图片');?>
+
 <?= $form->field($model, 'get_code')->textInput(['maxlength' => true])->label('提取码'); ?>
 <?=$form->field($model, 'content')->widget('\kucha\ueditor\UEditor',[
     'clientOptions' => [

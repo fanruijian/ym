@@ -13,6 +13,7 @@ use Yii;
  * @property string $discription 描述
  * @property int $shows 浏览量
  * @property string $down_url 下载链接地址
+ * @property string $img_url 截图地址
  * @property string $get_code 文件提取码
  * @property string $content 描述
  * @property int $status 状态
@@ -35,11 +36,11 @@ class Ym extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'cat_id', 'discription', 'down_url', 'get_code'], 'required'],
+            [['title', 'cat_id', 'discription', 'down_url', 'img_url', 'get_code'], 'required'],
             [['cat_id', 'shows', 'status'], 'integer'],
             [['content'], 'string'],
             [['created_at', 'modified_at'], 'safe'],
-            [['title', 'down_url'], 'string', 'max' => 200],
+            [['title', 'down_url', 'img_url'], 'string', 'max' => 200],
             [['discription'], 'string', 'max' => 500],
             [['get_code'], 'string', 'max' => 30],
         ];
@@ -57,6 +58,7 @@ class Ym extends \yii\db\ActiveRecord
             'discription' => 'Discription',
             'shows' => 'Shows',
             'down_url' => 'Down Url',
+            'img_url' => 'Img Url',
             'get_code' => 'Get Code',
             'content' => 'Content',
             'status' => 'Status',
