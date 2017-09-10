@@ -53,4 +53,8 @@ class IndexController extends BaseController
         var_dump($userModel);
         exit();
     }
+
+    public function actionHome(){
+         return $this->render('home');
+    }
 }

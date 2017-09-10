@@ -22,6 +22,8 @@ class CoreAsset extends AssetBundle
         'Public/HomeStyle/css/style.css',
         'Public/HomeStyle/css/external.min.css',
         'Public/HomeStyle/css/popup.css',
+        'Public/HomeStyle/css/reset-min.css',
+        'Public/HomeStyle/css/home.css',
     ];
     /* 全局JS文件 */
     public $js = [

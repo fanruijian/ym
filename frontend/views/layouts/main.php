@@ -43,8 +43,8 @@ $this->beginPage();
         </a>
                 <!-- 未登录头部 -->
         <ul class="reset" id="navheader">
-            <li ><a href="/index.php/Home/Index/index.html">首页</a></li>
-            <li class="current"><a href="/index.php/Home/Index/companylist.html" >源码</a></li>
+            <li ><a href="home">首页</a></li>
+            <li class="current"><a href="index" >源码</a></li>
             <li ><a href="/index.php/Resume/index.html" rel="nofollow">视频</a></li>
             <li ><a href="/index.php/Home/CompanyJob/create.html" rel="nofollow">工具</a></li>
             <li ><a href="/index.php/Home/News/index.html" rel="nofollow">联系我们</a></li>
