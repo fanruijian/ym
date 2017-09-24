@@ -57,4 +57,16 @@ class IndexController extends BaseController
     public function actionHome(){
          return $this->render('home');
     }
+
+    public function actionVideo(){
+        return $this->render('video');
+    }
+
+    public function actionTool(){
+        return $this->render('tool');
+    }
+
+    public function actionProduct(){
+        return $this->render('product');
+    }
 }
