@@ -18,7 +18,7 @@ Thumbs.db
 # composer vendor dir
 backend/runtime/
 frontend/runtime/
-web/storage/image
+web/
 
 # composer itself is not needed
 composer.phar

@@ -18,6 +18,18 @@
                                     </dl>
                                 </dd>
                             </dl>
+                            <dl class="hc_tag">
+                                <dd>
+                                    <dl>
+                                        <dt>语言</dt>
+                                        <dd>
+                                            <?php foreach ($category as $key => $value) { ?>
+                                            <a href="javascript:void(0)"><?php echo $value['title'];?></a>
+                                            <?php } ?>
+                                        </dd>
+                                    </dl>
+                                </dd>
+                            </dl>
                             <ul class="hc_list reset">
                                 <?php foreach ($yms as $key2 => $value2) { ?>
                                 <li>
@@ -36,41 +48,7 @@
                                         <li><?php echo $value2['created_at']; ?></li><li>下载:<?php echo $value2['shows']; ?></li>                                    </ul>
                                 </li>
                                 <?php } ?>
-                                <li>
-                                    <a href="/index.php/Home/Index/showCompany/id/3.html" target="_blank">
-                                        <h3 title="大家好">
-                                            大家好                                        </h3>
-                                        <div class="comLogo">
-                                                                                        <img src="/zp/Uploads/Company/Logo/3.JPEG" width="190" height="190" alt="大家好" />                                            <ul>
-                                                <li>
-                                                    O2O,电子商务                                                </li>
-                                                <li>
-                                                    北京，天使轮                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <a href="/index.php/Home/JobShow/index/jid/7.html" target="_blank">
-                                        Java                                    </a><a href="/index.php/Home/JobShow/index/jid/301.html" target="_blank">
-                                        产品助理                                    </a>                                    <ul class="reset ctags">
-                                        <li>美女多</li><li>交通补助</li><li>专项奖金</li><li>免费班车</li><li>年底双薪</li>                                    </ul>
-                                </li><li>
-                                    <a href="/index.php/Home/Index/showCompany/id/4.html" target="_blank">
-                                        <h3 title="小小咨询">
-                                            小小咨询                                        </h3>
-                                        <div class="comLogo">
-                                                                                        <img src="/zp/Uploads/Company/Logo/4.JPEG" width="190" height="190" alt="小小咨询" />                                            <ul>
-                                                <li>
-                                                    生活服务                                                </li>
-                                                <li>
-                                                    北京，A轮                                                </li>
-                                            </ul>
-                                        </div>
-                                    </a>
-                                    <a href="/index.php/Home/JobShow/index/jid/8.html" target="_blank">
-                                        资深课程顾问--建外SOHO                                    </a><a href="/index.php/Home/JobShow/index/jid/302.html" target="_blank">
-                                        实习运营                                    </a>                                    <ul class="reset ctags">
-                                        <li>美女多</li><li>专项奖金</li><li>绩效奖金</li><li>五险一金</li>                                    </ul>
-                                </li>            </ul>
+                            </ul>
                             <div class="Pagination"><?php echo $page; ?></div>
                         </form>
                     </div>
