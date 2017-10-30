@@ -34,18 +34,13 @@ class UserController extends Controller
     }
 
     public function actionAjaxLogin(){
-        $username = 'user@qq.com';
-        $password = '123456';
-        if(!isset($username) || !isset($username)){
-            echo '用户名密码不存在';
-        }
-        $user = User::findByUsername($username);
-        if($user) $check = $user->validatePassword($password);
-        if ($user && $check) {
-            echo '成功';
-        } else {
-            echo '失败';
-        }
+         /**
+     * ---------------------------------------
+     * 登录页
+     * ---------------------------------------
+     */
+        $user = User::findByUsername('fanruijian');
+        if($user) $check = $user->validatePassword($req['password']);
     }
 
     public function actionAjaxRegister(){

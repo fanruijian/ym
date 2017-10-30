@@ -43,11 +43,11 @@ $this->beginPage();
         </a>
                 <!-- 未登录头部 -->
         <ul class="reset" id="navheader">
-            <li ><a href="home">首页</a></li>
-            <li class="current"><a href="index" >源码</a></li>
-            <li ><a href="video" rel="nofollow">视频</a></li>
-            <li ><a href="tool" rel="nofollow">工具</a></li>
-            <li ><a href="product" rel="nofollow">产品服务</a></li>
+            <li ><a href="<?php echo Url::toRoute('index/home');?>">首页</a></li>
+            <li class="current"><a href="<?php echo Url::toRoute('index/index');?>" >源码</a></li>
+            <li ><a href="<?php echo Url::toRoute('index/video');?>" rel="nofollow">视频</a></li>
+            <li ><a href="<?php echo Url::toRoute('index/tool');?>" rel="nofollow">工具</a></li>
+            <li ><a href="<?php echo Url::toRoute('index/product');?>" rel="nofollow">产品服务</a></li>
         </ul>
         <ul class="loginTop">
             <li><a href="<?php echo Url::toRoute('user/login');?>" rel="nofollow">登录</a></li> 

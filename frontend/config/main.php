@@ -11,7 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     /* 默认路由 */
-    'defaultRoute' => 'index',
+    'defaultRoute' => 'index/index',
     /* 控制器默认命名空间 */
     'controllerNamespace' => 'frontend\controllers',
     /* 模块 */

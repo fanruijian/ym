@@ -11,7 +11,7 @@ use yii\helpers\Url;
         
     	<input type="hidden" id="resubmitToken" value="" />		
 		 <div class="login_box">
-        	<form id="loginForm" action="<?php echo Url::toRoute('user/aaa');?>" method='post'>
+        	<form id="loginForm" action="<?php echo Url::toRoute('user/ajax-login');?>" method='post'>
 				<input type="text" id="email" name="email" value="" tabindex="1" placeholder="请输入登录邮箱地址" />
 			  	<span class="error" style="display:none;" id="beError"></span>
 				<input type="password" id="password" name="password" tabindex="2" placeholder="请输入密码" />
@@ -44,7 +44,7 @@ use yii\helpers\Url;
 				});
 			});
 			$('#subbb').click(function(){
-				$.post('<?php echo Url::toRoute('user/bbb');?>',{'email':$('#email').val()},function(msg){
+				$.post('<?php echo Url::toRoute('user/ajax-login');?>',{'email':$('#email').val()},function(msg){
 					if(msg){								
 						$('#email').next().html('');
 						ep=true;				
